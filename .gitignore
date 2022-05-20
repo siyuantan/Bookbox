@@ -34,3 +34,4 @@ build/
 
 # Java binary files
 bin/
+.gradle/
