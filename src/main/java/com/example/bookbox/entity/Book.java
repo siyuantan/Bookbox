@@ -1,28 +1,33 @@
 package com.example.bookbox.entity;
 
-import java.util.List;
+import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "book")
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    // @Column(name = "book_id")
     private int book_id;
     
     private long isbn;
     private String title;
 	private float price;
     
+    @ManyToMany
+    @JoinTable(name = "book_author", 
+    joinColumns = @JoinColumn(name = "book_id"),
+    inverseJoinColumns = @JoinColumn(name = "author_id"))
+    private Set<Author> authorDetails;
 
     public int getBook_id() {
         return book_id;
@@ -40,6 +45,8 @@ public class Book {
         return price;
     }
 
-    // @OneToMany(targetEntity = Author.class)
-    // private List<Author> authorDetails;
+    public Set<Author> getAuthorDetails() {
+        return authorDetails;
+    }
+    
 }
