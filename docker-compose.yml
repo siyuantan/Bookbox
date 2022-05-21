@@ -7,7 +7,9 @@ services:
     # command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: password1
+      MYSQL_USER: bookUser
+      MYSQL_PASSWORD: password1
+      MYSQL_ROOT_PASSWORD: rootpassword1
       MYSQL_DATABASE: mybook
     ports:
       - "3306:3306"
