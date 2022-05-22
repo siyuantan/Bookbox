@@ -20,12 +20,6 @@ public class BookController {
 	
 	@Autowired
 	private BookRepository bookRepo;
-	
-	
-	// @GetMapping("/greeting")
-	// public Book greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		// 	return new Book(counter.incrementAndGet(), String.format(template, name));
-		// }
 		
 	@GetMapping("/books")
 	public @ResponseBody Iterable<Book> getAllBooks() {
