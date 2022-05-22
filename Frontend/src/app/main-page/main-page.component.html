@@ -1,0 +1,10 @@
+<div id="main-page-wrapper">
+    <div id="search-wrapper">
+        <app-search (searchEntered)="searchEntered($event)"></app-search>
+    </div>
+    <div id="cards-wrapper" *ngIf="retrievedBooks.length !== 0">
+        <div class="card-wrapper" *ngFor="let book of retrievedBooks">
+            <app-book-card [book]="book"></app-book-card>
+        </div>
+    </div>
+</div>

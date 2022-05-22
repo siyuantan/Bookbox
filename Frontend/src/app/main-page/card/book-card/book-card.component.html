@@ -1,0 +1,10 @@
+<mat-card class="example-card">
+  <mat-card-title>{{book.title}}</mat-card-title>
+  <mat-card-subtitle>
+    <span *ngFor="let author of book.authorDetails; index as i"><span *ngIf="i > 0">, </span>{{author.author_name}}</span>
+  </mat-card-subtitle>
+  <mat-card-content>
+    <p>${{book.price}}</p>
+    <p>ISBN: {{book.isbn}}</p>
+  </mat-card-content>
+</mat-card>

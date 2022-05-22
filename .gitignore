@@ -11,3 +11,8 @@ target/
 Backend/bin/
 Backend/.gradle/
 Backend/.mvn/
+
+# Angular
+Frontend/node_modules/
+Frontend/.angular/
+Frontend/.editorconfig
