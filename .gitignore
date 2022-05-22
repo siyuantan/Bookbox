@@ -8,5 +8,6 @@ target/
 .vscode/
 
 # Java generated files
-bin/
-.gradle/
+Backend/bin/
+Backend/.gradle/
+Backend/.mvn/
